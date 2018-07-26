@@ -21,6 +21,20 @@ Project to test behavior driven development (BDD) using cucumber-cpp, and the ro
 
 ```console
 
+.
+├── CMakeLists.txt
+├── LICENSE
+├── README.md
+└── tests
+    ├── execute_tests.sh
+    └── features
+        ├── CMakeLists.txt
+        ├── step_definitions
+        │   ├── cucumber.wire
+        │   └── UsersSteps.cpp
+        ├── support
+        │   └── env.rb
+        └── users.feature
 ```
 
 [Contents](#contents)
@@ -101,8 +115,8 @@ $ sudo make install
 
 #### Install project
 ```console
-$ git clone https://github.com/NorbertoBurciaga/behavior-driven-development-hello.git
-$ cd HelloBDD
+$ git clone https://github.com/NorbertoBurciaga/behavior-driven-development-rocksdb-users.git
+$ cd behavior-driven-development-rocksdb-users
 $ mkdir build
 $ cd build
 $ cmake .. && make
@@ -111,24 +125,8 @@ $ cmake .. && make
 ### Testing
 
 ```console
-HelloBDD$ cd tests
-HelloBDD/tests$ ../build/bin/HelloBDDSteps >/dev/null &
-HelloBDD/tests$ cucumber
+
 ```
-
-It should show the following screen if everything is ok:
-
-Feature: Application should be able to print greeting message Hello BDD!
-
-  Scenario: Should be able to greet with Hello BDD! message # features/hello.feature:5
-    Given an instance of Hello class is created             # HelloBDDSteps.cpp:12
-    When the sayHello method is invoked                     # HelloBDDSteps.cpp:18
-    Then it should return "Hello BDD!"                      # HelloBDDSteps.cpp:24
-
-1 scenario (1 passed)
-3 steps (3 passed)
-0m0.036s
-[1]+  Done                    ../build/bin/HelloBDDSteps > /dev/null
 
 
 ### Documentation
