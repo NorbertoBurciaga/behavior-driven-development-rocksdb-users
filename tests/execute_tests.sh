@@ -3,5 +3,5 @@
 cd ../build
 cmake .. && make
 cd ../tests
-../build/bin/UsersSteps &
+../build/bin/CucumberStepsServer &
 cucumber

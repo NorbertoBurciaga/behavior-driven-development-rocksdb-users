@@ -21,11 +21,18 @@ public:
 	}
 
 	void listUserFieldValues() {
+		id_type previous_id = 0;
+
 		user_field_value_type::iterator it = userFieldValue.begin();
 		while(it != userFieldValue.end()) {
 			pair<id_type, field_type> key = it->first;
 			value_type value = it->second;
-			cout << "| " << key.first << "	| " << key.second << "	| " << value << "	|" << endl;
+//			cout << "| " << key.first << "	| " << key.second << "	| " << value << "	|" << endl;
+			if (key.first != previous_id) {
+				cout << endl << "| ";
+				previous_id = key.first;
+			}
+			cout << value << "	|";
 			it++;
 		}
 	}
