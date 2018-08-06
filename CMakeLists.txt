@@ -19,4 +19,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${output_dir})
 
 
 # add the CMakeLists.txt located in tests/features to create cucumber-cpp server executable
+add_subdirectory(src)
 add_subdirectory(tests/features)
