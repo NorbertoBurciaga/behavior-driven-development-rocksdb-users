@@ -1,10 +1,10 @@
 # src is an "include" directory
-include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/src/Database)
 
 # Define add_cucumber_executable function. It adds a prefix flag to each cpp in order to merge them into one executable 
 function(add_cucumber_executable)
 	add_executable(CucumberStepsServer ${ARGV})
-	target_link_libraries(CucumberStepsServer rocksdb cucumber-cpp GTest::GTest ${Boost_LIBRARIES})
+	target_link_libraries(CucumberStepsServer database rocksdb cucumber-cpp GTest::GTest ${Boost_LIBRARIES})
 	foreach(_arg ${ARGN})
 		get_filename_component(OBJECT_PREFIX ${_arg} NAME_WE)
 		set_source_files_properties(${_arg} PROPERTIES COMPILE_FLAGS "-DCUKE_OBJECT_PREFIX=${OBJECT_PREFIX}")
